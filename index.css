@@ -1,0 +1,671 @@
+/* =============================================
+   GLOBAL RESET & BASE
+   ============================================= */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+}
+
+a {
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =============================================
+   UTILITY
+   ============================================= */
+.section-gap {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.text-gold {
+    color: #FFC107 !important;
+}
+
+.bg-gold {
+    background-color: #FFC107 !important;
+}
+
+.bg-dark-card {
+    background-color: #1A1A1A;
+}
+
+.bg-light-blue {
+    background-color: #F0F4F8 !important;
+}
+
+.card-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+    border-radius: 15px !important;
+}
+
+/* =============================================
+   SIDEBAR NAVIGATION
+   ============================================= */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 60px;
+    background: #FFC107;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-item {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 22px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.sidebar-item:last-child {
+    border-bottom: none;
+}
+
+.sidebar-item:hover {
+    background: #d4ae48;
+    color: #000;
+}
+
+.sidebar-item.active-nav {
+    background: #FFF;
+    color: #FFC107;
+}
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 80px 20px 120px;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    gap: 40px;
+}
+
+.hero-profile-wrap {
+    flex: 0 0 320px;
+}
+
+.hero-img-frame {
+    border: 8px solid #FFF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    background: #333;
+    overflow: hidden;
+}
+
+.hero-img-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.hero-name {
+    font-size: 3rem;
+    line-height: 70px;
+    font-weight: 800;
+    color: #FFC107;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.hero-role {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FFF;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.hero-meta {
+    font-size: 1rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.hero-info-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #FFF;
+    line-height: 1.6;
+}
+
+.hero-info-line b {
+    color: #FFF;
+    font-weight: 700;
+}
+
+.btn-view-more {
+    background: #111;
+    color: #FFF;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-view-more:hover {
+    background: #000;
+    color: #FFC107;
+    border-color: #FFC107;
+}
+
+.hero-right-img {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-right-img img {
+    width: 100%;
+    max-width: 250px;
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* =============================================
+   HORIZONTAL ACTION BARS
+   ============================================= */
+.horizontal-actions {
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #EEE;
+    padding: 0 80px;
+}
+
+.action-bar {
+    display: flex;
+    align-items: center;
+    padding: 25px 40px;
+    color: #333;
+    transition: background 0.3s;
+    border-right: 1px solid #EEE;
+}
+
+.action-bar:last-child {
+    border-right: none;
+}
+
+.action-bar:hover {
+    background: #F9F9F9;
+    text-decoration: none;
+}
+
+.action-bar i {
+    font-size: 22px;
+    color: #FFC107;
+    margin-right: 15px;
+}
+
+.action-bar span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* =============================================
+   PERSONAL DETAILS CARD
+   ============================================= */
+.details-card {
+    background: #F0F4F8;
+    color: #333;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.details-card h3 {
+    font-weight: 800;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.detail-item {
+    margin-bottom: 12px;
+}
+
+.detail-item b {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-item span {
+    display: block;
+    font-weight: 700;
+    color: #222;
+    font-size: 1rem;
+    overflow-wrap: break-word;
+}
+
+/* =============================================
+   SECTION TITLES
+   ============================================= */
+.section-title-dark {
+    color: #FFF;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+/* =============================================
+   EXPERIENCE SECTION (YELLOW HEADER PATTERN)
+   ============================================= */
+.exp-entry {
+    margin-bottom: 50px;
+}
+
+.exp-header {
+    background: #EEC559;
+    padding: 25px 30px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.exp-date-box p {
+    margin-bottom: 2px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.exp-date-box b {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.exp-comp-box {
+    margin-top: 15px;
+}
+
+.exp-comp-box b {
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: block;
+}
+
+.exp-content-card {
+    background: #FFF;
+    padding: 40px 30px;
+    color: #333;
+}
+
+.exp-content-card h3 {
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.exp-content-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* =============================================
+   EDUCATION CARD
+   ============================================= */
+.edu-card {
+    background: #FFF;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    color: #333;
+}
+
+.edu-card i {
+    font-size: 30px;
+    color: #EEC559;
+}
+
+.edu-card h5 {
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.edu-card .text-warning {
+    color: #EEC559 !important;
+    font-weight: 700;
+}
+
+.location-link {
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.location-link:hover {
+    color: #EEC559 !important;
+}
+
+/* =============================================
+   SKILLS SECTION
+   ============================================= */
+.skill-label-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.skill-label-row span {
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.skill-percent {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #EEC559;
+}
+
+.skill-item:hover .skill-percent {
+    opacity: 1;
+}
+
+.progress {
+    height: 8px !important;
+    background-color: #EEE !important;
+    border-radius: 0 !important;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    background-color: #EEC559 !important;
+}
+
+/* =============================================
+   RECOMMENDATIONS (BOLD YELLOW)
+   ============================================= */
+.recommendation-section {
+    background-color: #EEC559;
+    color: #000;
+    padding: 60px 0;
+}
+
+.rec-quote-box {
+    position: relative;
+    padding: 0 40px;
+}
+
+.rec-quote-box i {
+    font-size: 2.5rem;
+    opacity: 0.4;
+}
+
+.rec-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+/* =============================================
+   CONTACT FORM (YELLOW INPUTS)
+   ============================================= */
+.contact-section-yellow {
+    background-color: #EEC559;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-section-yellow h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.yellow-input {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #000 !important;
+    border-radius: 0 !important;
+    padding: 15px 5px !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+}
+
+.yellow-input::placeholder {
+    color: #444 !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.yellow-input:focus {
+    box-shadow: none !important;
+    border-bottom: 3px solid #000 !important;
+}
+
+.btn-black {
+    background: #000;
+    color: #FFF;
+    border-radius: 50px;
+    padding: 12px 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 30px;
+    border: none;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer-dark {
+    background-color: #1A1A1A;
+    padding: 60px 40px;
+}
+
+.footer-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-info-item i {
+    font-size: 28px;
+    color: #EEC559;
+    margin-right: 20px;
+}
+
+.footer-info-item p {
+    margin-bottom: 0px;
+    font-size: 0.8rem;
+    color: #AAA;
+    text-transform: uppercase;
+}
+
+.footer-info-item h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.social-link {
+    color: #FFF;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.social-link i {
+    color: #EEC559;
+    margin-right: 10px;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 991px) {
+    .sidebar {
+        display: none;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+        min-height: auto;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-profile-wrap {
+        flex: 0 0 auto;
+        width: 250px;
+        margin-bottom: 30px;
+    }
+
+    .hero-name {
+        font-size: 2rem;
+        line-height: 40px;
+    }
+
+    .hero-role {
+        font-size: 1.5rem;
+    }
+
+    .hero-right-img {
+        display: none;
+    }
+
+    .horizontal-actions {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .action-bar {
+        border-right: none;
+        border-bottom: 1px solid #EEE;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-info-line {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-dark {
+        padding: 40px 20px;
+    }
+    .recommendation-section h1 {
+        font-size: 1.8rem;
+        word-wrap: break-word;
+    }
+    .recommendation-section .px-5 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .rec-quote-box {
+        padding: 0 10px;
+    }
+    .rec-quote-box i {
+        font-size: 1.8rem;
+    }
+    .rec-text {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+    .contact-section-yellow h1 {
+        font-size: 2rem;
+    }
+    .footer-info-item h5 {
+        font-size: 1rem;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-info-item h5 {
+        font-size: 1.1rem;
+    }
+    .footer-info-item i {
+        font-size: 22px;
+        margin-right: 15px;
+    }
+}
+
+/* Scroll reveal placeholder */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
