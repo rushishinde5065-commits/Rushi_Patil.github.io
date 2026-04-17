@@ -650,7 +650,7 @@ ul {
 
 @media (max-width: 480px) {
     .footer-info-item h5 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .footer-info-item i {
         font-size: 22px;
