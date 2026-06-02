@@ -437,6 +437,100 @@ ul {
 }
 
 /* =============================================
+   CERTIFICATES
+   ============================================= */
+.cert-card {
+    background: #FFF;
+    border-radius: 12px;
+    color: #333;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.cert-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #FFC107, #EEC559, #FFC107);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.cert-card:hover::after {
+    opacity: 1;
+}
+
+.cert-img-wrap {
+    overflow: hidden;
+    position: relative;
+    background: #f8f9fa;
+    border-bottom: 1px solid #EEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.cert-img {
+    height: 220px;
+    width: 100%;
+    object-fit: contain;
+    padding: 15px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cert-card:hover .cert-img {
+    transform: scale(1.08);
+}
+
+.cert-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #FFC107;
+    color: #000;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transform: scale(0) rotate(-180deg);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+}
+
+.cert-card:hover .cert-badge {
+    transform: scale(1) rotate(0deg);
+}
+
+.cert-card .text-warning,
+.cert-card .text-secondary {
+    transition: color 0.3s ease;
+}
+
+.cert-card:hover .text-warning {
+    color: #0056D2 !important;
+}
+
+.cert-card:hover .text-secondary {
+    color: #222 !important;
+}
+
+/* =============================================
    RECOMMENDATIONS (BOLD YELLOW)
    ============================================= */
 .recommendation-section {
